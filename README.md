@@ -1,2 +1,2 @@
 # screentime
-Report the weekly time spent at this computer (for Mac OS).
+Report the daily time spent at this computer (for Mac OS).
