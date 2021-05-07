@@ -49,6 +49,7 @@ while (<$if>) {
 	}
 }
 close $if or die "Cannot read PM logs";
+exit if !%durations;
 
 my %days = map { str2time($_) => $_ } keys %durations;
 my @days = sort { $a <=> $b } (keys %days);
