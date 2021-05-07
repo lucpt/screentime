@@ -39,9 +39,10 @@ while (<$if>) {
 	#next if !/^((?:[^\s]+\s+){3}).*Display is turned (on|off)$/;
 	my $date = $1;
 	my $day = $2;
+	my $display_state = $4;
 	if (!defined $start) {
-		$start = str2time($date) if !defined $start;
-	} else {
+		$start = str2time($date) if $display_state eq "on";
+	} elsif ($display_state eq "off") {
 		my $duration = str2time($date) - $start;
 		undef $start;
 		$durations{$day} += $duration;
