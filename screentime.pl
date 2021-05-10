@@ -54,7 +54,7 @@ exit if !%durations;
 my %days = map { str2time($_) => $_ } keys %durations;
 my @days = sort { $a <=> $b } (keys %days);
 my $first_day_aligned = align_down_to_monday($days[0]);
-my $last_day_aligned = align_up_to_monday($days[-1]);
+my $last_day_aligned = align_up_to_monday($days[-1] + $DAY_S);
 
 my $clock_change = 0;
 my $first_day_with_clock_changed;
